@@ -26,10 +26,3 @@ function [tceti_h] = load_characteristic_values_tceti_h()
     tceti_h.e = 0.23;
     tceti_t.theta_star = 143; %[km/s]
 end
-
-function [tceti_e] = load_characteristic_values_tceti_e()
-    tceti_e.mu = 1566504.9301;
-    tceti_e.a = 150000000; % from book
-    tceti_e.e = 0.15; % no data from book, instead took average of other three planets
-    tceti_e.theta_star = 324;
-end
