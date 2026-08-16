@@ -1,0 +1,40 @@
+function [tceti_star, tceti_f, tceti_g, tceti_h, tceti_e] = load_characteristic_values_tceti()
+    R_E = 6378.1363; % [km] Earth radius for reference
+    mu_E = 398600.4415; % [km3 / s2] Earth gravitational parameter
+
+    % Reference: https://exoplanetarchive.ipac.caltech.edu/overview/tau%20Cet%20f#planet_tau-Cet-f_collapsible
+    tceti_f.mu = 1566504.9301; %[km3 / s2] NASA data
+    tceti_f.a = 199564000; %[km] NASA data
+    tceti_f.e = 0.16; % NASA data
+    tceti_f.w = deg2rad(119.75); %[km/s] 
+    tceti_f.R = tceti_f.mu / mu_E * R_E; % Approximate a radius for the planet
+    tceti_f.theta_star = deg2rad(30); % initial true anomaly
+
+    tceti_g.mu = 470350.215061; %[ km3 / s2]
+    tceti_g.a = 19896517; %[km]
+    tceti_g.e = 0.06;
+    tceti_g.w = deg2rad(395.341); %[km/s]
+    tceti_g.R = tceti_g.mu / mu_E * R_E; % Approximate a radius for the planet
+    tceti_g.theta_star = deg2rad(20); % initial true anomaly
+
+    tceti_h.mu = 474336.233832; %[ km3 / s2]
+    tceti_h.a = 36352283; %[km]
+    tceti_h.e = 0.23;
+    tceti_h.w = deg2rad(7.450); %[km/s]
+    tceti_h.R = tceti_h.mu / mu_E * R_E; % Approximate a radius for the planet
+    tceti_h.theta_star = deg2rad(200); % initial true anomaly
+
+    % Planet e confirmed to not exist in 2025 RIP
+    tceti_e.mu = 3.93 * 398600.4415; % [km3 / s2]
+    tceti_e.a = 149597898 * 0.538; % [km]
+    tceti_e.e = 0.18;
+    tceti_e.w = deg2rad(22.35);
+    tceti_e.R = tceti_e.mu / mu_E * R_E; % Approximate a radius for the planet
+    tceti_e.theta_star = deg2rad(0);
+
+    tceti_star.mu = 106121370000; %[ km3 / s2]
+    tceti_star.l = tceti_h.a; %[km]
+    tceti_star.t = sqrt(tceti_star.mu^-1 * tceti_star.l^3); %[s]
+    tceti_star.v = tceti_star.l/tceti_star.t; %[km/s]
+    tceti_star.a = tceti_star.v/tceti_star.t;%[km/s^2]
+end
