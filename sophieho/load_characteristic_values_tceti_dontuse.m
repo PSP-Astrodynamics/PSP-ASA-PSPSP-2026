@@ -1,4 +1,4 @@
-function [tceti_star,tceti_f,tceti_g,tceti_h] = load_characteristic_values_tceti()
+function [tceti_star,tceti_f,tceti_g,tceti_h] = load_characteristic_values_tceti_dontuse()
     tceti_star.mu = 106121370000000000000; %[ km3 / s2]
     tceti_star.l = 19896517; %[km] from tceti_g.a
     tceti_star.t = sqrt(tceti_star.mu^-1 * tceti_star.l^3); %[s]
