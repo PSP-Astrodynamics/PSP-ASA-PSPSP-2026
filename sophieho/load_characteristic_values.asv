@@ -8,9 +8,9 @@ end
 
 function [tceti_f] = load_characteristic_values_tceti_e()
     tceti_f.mu = 1566504.9301; %[km3 / s2] NASA data
-    tceti_f.a = 199564000; %[km] NASA data
+    tceti_f.a = 1.99564 * 10^8; %[km] NASA data
     tceti_f.e = 0.16; % NASA data
-    tceti_f.theta_star = 65; %[km/s] 
+    tceti_f.theta_star = ; %[km/s] 
 end
 
 function [tceti_g] = load_characteristic_values_tceti_g()
@@ -24,12 +24,8 @@ function [tceti_h] = load_characteristic_values_tceti_h()
     tceti_h.mu = 474336.233832; %[ km3 / s2]
     tceti_h.a = 36352283; %[km]
     tceti_h.e = 0.23;
-    tceti_t.theta_star = 143; %[km/s]
+    tceti_t.theta_star = ; %[km/s]
 end
 
 function [tceti_e] = load_characteristic_values_tceti_e()
-    tceti_e.mu = 1566504.9301;
-    tceti_e.a = 150000000; % from book
-    tceti_e.e = 0.15; % no data from book, instead took average of other three planets
-    tceti_e.theta_star = 324;
-end
+    tceti_e
